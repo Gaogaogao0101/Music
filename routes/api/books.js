@@ -17,7 +17,6 @@ router.get('/', async function (req, res, next) {
             [Op.like]: '%' + title + '%'
         }
     }
-
     var result = await models.Book.findAndCountAll({
         order: [['id', 'DESC']],
         attributes: ['id', 'author', 'title', 'fav_nums'],
